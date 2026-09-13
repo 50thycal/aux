@@ -1,0 +1,94 @@
+:root {
+  --bg: #0e0e10;
+  --panel: #17171b;
+  --line: #2c2c34;
+  --fg: #e6e6e6;
+  --dim: #8a8a95;
+  --ok: #5ad07a;
+  --warn: #e8c547;
+  --bad: #ff6b6b;
+  --accent: #7aa2f7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+a { color: var(--accent); }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+.panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  margin: 0 0 12px;
+  padding: 10px 12px;
+}
+
+.panel > h2 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 6px;
+}
+
+button {
+  font: inherit;
+  background: #23232b;
+  color: var(--fg);
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  cursor: pointer;
+}
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button.primary { background: #24406e; border-color: var(--accent); }
+button.danger { border-color: var(--bad); color: var(--bad); }
+
+input[type="text"], input[type="number"], textarea {
+  font: inherit;
+  background: #101014;
+  color: var(--fg);
+  border: 1px solid var(--line);
+  padding: 4px 8px;
+}
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 3px 8px 3px 0; vertical-align: top; }
+th { color: var(--dim); font-weight: normal; border-bottom: 1px solid var(--line); }
+
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.dim { color: var(--dim); }
+.ok { color: var(--ok); }
+.warn { color: var(--warn); }
+.bad { color: var(--bad); }
+.mono-block {
+  white-space: pre-wrap;
+  word-break: break-all;
+  background: #101014;
+  border: 1px solid var(--line);
+  padding: 6px 8px;
+  max-height: 260px;
+  overflow: auto;
+}
+.tag {
+  border: 1px solid var(--line);
+  padding: 0 5px;
+  font-size: 11px;
+  color: var(--dim);
+}
+.log-line { border-bottom: 1px solid #1d1d23; padding: 2px 0; }
+.log-line.err { background: #2a1414; }
+.log-line.marker { background: #14202a; color: var(--accent); }
+.step { border-left: 2px solid var(--line); padding: 4px 0 4px 8px; margin: 2px 0; }
+.step.current { border-left-color: var(--accent); background: #16202e; }
+.step.done { border-left-color: var(--ok); }
+.step.failed { border-left-color: var(--bad); }

@@ -1,0 +1,27 @@
+{
+  "name": "auxcord-spike",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node test/e2e.mjs",
+    "test:only": "node test/e2e.mjs",
+    "test:ui": "node test/ui.mjs"
+  },
+  "dependencies": {
+    "next": "15.5.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.3",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "playwright": "^1.55.0",
+    "typescript": "5.8.3"
+  }
+}
